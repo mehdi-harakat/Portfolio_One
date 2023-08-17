@@ -1,0 +1,53 @@
+// This Is The First Rule For Media;
+
+@mixin mediaSize($size) {
+	@if $size == "mobile" {
+		@media (max-width: 767px) {
+			@content;
+		}
+	} @else if $size == "small" {
+		@media (min-width: 768px) {
+			@content;
+		}
+	} @else if $size == "medium" {
+		@media (min-width: 992px) {
+			@content;
+		}
+	} @else if $size == "large" {
+		@media (min-width: 1200px) {
+			@content;
+		}
+	} @else if $size == "very-larg" {
+		@media (min-width: 1400px) {
+			@content;
+		}
+	}
+}
+
+
+// This Is The Second Rule For Media;
+
+@mixin mediaSizeTwo($size) {
+	@if $size == "small" {
+		@media (max-width: 767px) {
+			@content;
+		}
+	} @else if $size == "medium" {
+		@media (max-width: 991px) {
+			@content;
+		}
+	} @else if $size == "large" {
+		@media (max-width: 1199px) {
+			@content;
+		}
+	} @else if $size == "very-larg" {
+		@media (min-width: 1399px) {
+			@content;
+		}
+	}
+}
+
+
+
+// Flex Rules 
+
