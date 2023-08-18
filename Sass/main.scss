@@ -11,6 +11,68 @@ body {
 	position: relative;
 }
 
+/* ---------------------- Start Cursor Animation ------------------*/
+.cursor-anime {
+	background: linear-gradient(
+		190.05deg,
+		#98e8fc -16.32%,
+		#1fa9ff 56.32%,
+		#8980f6 115.25%
+	);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	pointer-events: none;
+	opacity: 1;
+	transition: all 0.2s;
+	z-index: 500;
+}
+
+.cursor-anime.active {
+	transform: scale(4);
+	opacity: 0;
+}
+
+/* ----------------------- Start Up Button ---------------*/
+.up-btn {
+	background-color: var(--black-color);
+	border-radius: 8px;
+	color: var(--white-color);
+	position: fixed;
+	right: 30px;
+	bottom: 30px;
+	width: 36px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 12px;
+	cursor: pointer;
+	opacity: 0;
+	pointer-events: none;
+	transition: var(--first-transition);
+
+	&:hover {
+		background-color: var(--hover-color);
+	}
+
+	&.active {
+		opacity: 1;
+		pointer-events: all;
+	}
+
+	@include mediaSizeTwo(medium) {
+		right: 20px;
+		bottom: 65px;
+		width: 30px;
+		height: 36px;
+		font-size: 10px;
+	}
+}
+
 /* ---------------------- Start Header --------------------*/
 header {
 	position: relative;
@@ -22,6 +84,7 @@ header {
 	position: fixed;
 	top: 0;
 	left: 0;
+	transition: var(--first-transition);
 	.container {
 		display: flex;
 		justify-content: space-between;
@@ -92,6 +155,7 @@ header {
 	@include mediaSizeTwo(medium) {
 		top: 100%;
 		transform: translateY(-100%);
+		padding-top: 10px;
 		padding-left: 20px;
 		padding-right: 20px;
 		.container {
@@ -651,7 +715,7 @@ main {
 				}
 				.my-info {
 					.cards {
-					margin-bottom: 25px;
+						margin-bottom: 25px;
 						.ad-card {
 							i {
 								font-size: 16px;
@@ -682,7 +746,6 @@ main {
 	}
 }
 
-
 .about {
 	@include mediaSizeTwo(small) {
 		.container {
@@ -690,7 +753,6 @@ main {
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
-
 
 				.my-info {
 					width: 85%;
@@ -701,7 +763,7 @@ main {
 								font-size: 12px;
 								margin-bottom: 6px;
 							}
-							
+
 							h3 {
 								font-size: 12px;
 								margin-bottom: 4px;
@@ -727,12 +789,11 @@ main {
 	}
 }
 
-
 /* ------------------------ Start Skills ------------------------------*/
 
 .skills {
 	padding-top: 60px;
-	padding-bottom: 120px;
+	padding-bottom: 60px;
 	color: var(--black-color);
 	.container {
 		.boxes {
@@ -764,7 +825,6 @@ main {
 					width: 100%;
 					gap: 40px;
 					.col {
-
 						li {
 							display: flex;
 							gap: 12px;
@@ -800,8 +860,7 @@ main {
 	}
 }
 
-
-// Start Media Queries 
+// Start Media Queries
 .skills {
 	@include mediaSizeTwo(medium) {
 		.container {
@@ -829,6 +888,120 @@ main {
 					.techs {
 						gap: 10px;
 						justify-content: space-between;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ------------------------------ Start Services -----------------------*/
+
+.services {
+	padding-top: 60px;
+	padding-bottom: 120px;
+	color: var(--black-color);
+	.container {
+		.cards {
+			width: 86%;
+			margin: 0 auto;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+			gap: 40px;
+			cursor: pointer;
+
+			.box {
+				box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+				padding: 30px;
+				padding-top: 100px;
+				padding-bottom: 24px;
+				border-radius: 14px;
+
+				i {
+					font-size: 32px;
+					margin-bottom: 20px;
+				}
+
+				h3 {
+					text-transform: capitalize;
+					line-height: 1.4;
+					font-size: 18px;
+					font-weight: 500;
+					letter-spacing: 0.4px;
+					margin-bottom: 20px;
+				}
+
+				.more {
+					display: flex;
+					align-items: center;
+					gap: 8px;
+					color: var(--para-color);
+
+					p {
+						font-size: 12px;
+						text-transform: capitalize;
+					}
+
+					i {
+						font-size: 10px;
+						margin: 0;
+						animation: moving 0.4s ease-in-out alternate infinite both;
+						animation-play-state: paused;
+					}
+
+					@keyframes moving {
+						0% {
+							transform: translateX(0);
+						}
+						100% {
+							transform: translateX(3px);
+						}
+					}
+				}
+
+				&:hover i {
+					animation-play-state: running;
+				}
+			}
+		}
+	}
+}
+
+.services {
+	@include mediaSizeTwo(medium) {
+		.container {
+			.cards {
+				width: 100%;
+				gap: 26px;
+
+				.box {
+					i {
+						font-size: 30px;
+					}
+
+					h3 {
+						font-size: 18px;
+					}
+				}
+			}
+		}
+	}
+
+	@include mediaSizeTwo(small) {
+		.container {
+			.cards {
+				width: 100%;
+				gap: 14px;
+
+				.box {
+					padding-top: 60px;
+
+					i {
+						font-size: 24px;
+					}
+
+					h3 {
+						font-size: 16px;
 					}
 				}
 			}
