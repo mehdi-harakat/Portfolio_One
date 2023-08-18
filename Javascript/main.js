@@ -2,6 +2,8 @@ const cursorMove = document.querySelector(".cursor-anime");
 const upBtn = document.querySelector('.up-btn');
 const headerOne = document.querySelector("header");
 const navBar = document.querySelector(".nav-bar");
+const servCards = document.querySelectorAll('.services .cards .box');
+const servHolder = document.querySelectorAll('.services .cards .holder');
 
 function closeNav() {
 	navBar.classList.toggle("active");
@@ -40,4 +42,19 @@ window.addEventListener("mousemove", (e) => {
   } else {
     cursorMove.classList.remove("active");
   }
+})
+
+
+function closePopUp(e) {
+  e.parentElement.parentElement.classList.remove("active");
+}
+
+servCards.forEach((e) => {
+  e.addEventListener('click', () => {
+    servHolder.forEach((el) => {
+      if (e.dataset.count === el.dataset.count) {
+        el.classList.add("active");
+      }
+    })
+  })
 })
