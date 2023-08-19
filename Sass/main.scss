@@ -29,6 +29,10 @@ body {
 	opacity: 1;
 	transition: all 0.2s;
 	z-index: 500;
+
+	@include mediaSizeTwo(medium) {
+		display: none;
+	}
 }
 
 .cursor-anime.active {
@@ -54,6 +58,7 @@ body {
 	opacity: 0;
 	pointer-events: none;
 	transition: var(--first-transition);
+	z-index: 100;
 
 	&:hover {
 		background-color: var(--hover-color);
@@ -896,7 +901,7 @@ main {
 
 .services {
 	padding-top: 60px;
-	padding-bottom: 120px;
+	padding-bottom: 60px;
 	color: var(--black-color);
 	.container {
 		.cards {
@@ -1083,6 +1088,163 @@ main {
 
 					h3 {
 						font-size: 16px;
+					}
+				}
+			}
+		}
+	}
+}
+
+// -------------------------------------------------------------------------------
+// ---------- Start Qualification --------------------------------------------------
+
+.qualification {
+	padding-top: 60px;
+	padding-bottom: 180px;
+	color: var(--black-color);
+	.container {
+		.holder {
+			.togglers {
+				@include mediaSizeTwo(medium) {
+					gap: 20px;
+				}
+				display: flex;
+				justify-content: center;
+				gap: 60px;
+				.educat-exper {
+					position: relative;
+					display: flex;
+					align-items: center;
+					cursor: pointer;
+					gap: 8px;
+					margin-bottom: 60px;
+					i {
+						font-size: 14px;
+						user-select: none;
+					}
+
+					h3 {
+						text-transform: capitalize;
+						font-weight: 400;
+						user-select: none;
+					}
+
+					&::before {
+						content: "";
+						width: 0;
+						height: 1px;
+						background-color: var(--black-color);
+						position: absolute;
+						bottom: -5px;
+						left: 50%;
+						transform: translateX(-50%);
+						transition: var(--first-transition);
+					}
+
+					&:hover::before {
+						width: 65%;
+					}
+				}
+			}
+
+			.infos {
+				width: 100%;
+
+				.post {
+					display: none;
+					&.active {
+						display: block;
+					}
+					.bars {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						span {
+							position: relative;
+							width: 12px;
+							height: 12px;
+							background-color: var(--black-color);
+							border-radius: 50%;
+
+							.card {
+								position: absolute;
+								width: max-content;
+								top: -4px;
+
+								h4 {
+									text-transform: capitalize;
+									font-weight: 400;
+									font-size: 14px;
+									margin-bottom: 6px;
+								}
+
+								> p {
+									font-size: 12px;
+									font-weight: 300;
+									text-transform: capitalize;
+									color: var(--para-color);
+									margin-bottom: 16px;
+								}
+
+								.para {
+									display: flex;
+									gap: 8px;
+									i {
+										font-size: 9px;
+										color: var(--para-color);
+									}
+
+									p {
+										font-weight: 200;
+										font-size: 10px;
+										color: var(--para-color);
+									}
+								}
+							}
+
+							.one {
+								left: -160px;
+							}
+							.two {
+								right: -160px;
+							}
+							.three {
+								left: -160px;
+							}
+							.four {
+								right: -160px;
+							}
+
+							@include mediaSizeTwo(small) {
+								.one {
+									left: -130px;
+								}
+								.two {
+									right: -130px;
+								}
+								.three {
+									left: -130px;
+								}
+								.four {
+									right: -130px;
+								}
+							}
+						}
+
+						span:not(:last-child) {
+							margin-bottom: 70px;
+
+							&::before {
+								content: "";
+								width: 2px;
+								height: 70px;
+								position: absolute;
+								top: 12px;
+								left: 50%;
+								transform: translateX(-50%);
+								background-color: var(--black-color);
+							}
+						}
 					}
 				}
 			}

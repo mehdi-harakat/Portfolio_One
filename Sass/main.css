@@ -126,6 +126,11 @@ body {
   transition: all 0.2s;
   z-index: 500;
 }
+@media (max-width: 991px) {
+  .cursor-anime {
+    display: none;
+  }
+}
 
 .cursor-anime.active {
   transform: scale(4);
@@ -150,6 +155,7 @@ body {
   opacity: 0;
   pointer-events: none;
   transition: var(--first-transition);
+  z-index: 100;
 }
 .up-btn:hover {
   background-color: var(--hover-color);
@@ -858,7 +864,7 @@ main .container .pic-anime .box img {
 /* ------------------------------ Start Services -----------------------*/
 .services {
   padding-top: 60px;
-  padding-bottom: 120px;
+  padding-bottom: 60px;
   color: var(--black-color);
 }
 .services .container .cards {
@@ -1014,4 +1020,147 @@ main .container .pic-anime .box img {
   .services .container .cards .box h3 {
     font-size: 16px;
   }
+}
+
+.qualification {
+  padding-top: 60px;
+  padding-bottom: 180px;
+  color: var(--black-color);
+}
+.qualification .container .holder .togglers {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+@media (max-width: 991px) {
+  .qualification .container .holder .togglers {
+    gap: 20px;
+  }
+}
+.qualification .container .holder .togglers .educat-exper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 8px;
+  margin-bottom: 60px;
+}
+.qualification .container .holder .togglers .educat-exper i {
+  font-size: 14px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.qualification .container .holder .togglers .educat-exper h3 {
+  text-transform: capitalize;
+  font-weight: 400;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.qualification .container .holder .togglers .educat-exper::before {
+  content: "";
+  width: 0;
+  height: 1px;
+  background-color: var(--black-color);
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: var(--first-transition);
+}
+.qualification .container .holder .togglers .educat-exper:hover::before {
+  width: 65%;
+}
+.qualification .container .holder .infos {
+  width: 100%;
+}
+.qualification .container .holder .infos .post {
+  display: none;
+}
+.qualification .container .holder .infos .post.active {
+  display: block;
+}
+.qualification .container .holder .infos .post .bars {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.qualification .container .holder .infos .post .bars span {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  background-color: var(--black-color);
+  border-radius: 50%;
+}
+.qualification .container .holder .infos .post .bars span .card {
+  position: absolute;
+  width: -moz-max-content;
+  width: max-content;
+  top: -4px;
+}
+.qualification .container .holder .infos .post .bars span .card h4 {
+  text-transform: capitalize;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.qualification .container .holder .infos .post .bars span .card > p {
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: capitalize;
+  color: var(--para-color);
+  margin-bottom: 16px;
+}
+.qualification .container .holder .infos .post .bars span .card .para {
+  display: flex;
+  gap: 8px;
+}
+.qualification .container .holder .infos .post .bars span .card .para i {
+  font-size: 9px;
+  color: var(--para-color);
+}
+.qualification .container .holder .infos .post .bars span .card .para p {
+  font-weight: 200;
+  font-size: 10px;
+  color: var(--para-color);
+}
+.qualification .container .holder .infos .post .bars span .one {
+  left: -160px;
+}
+.qualification .container .holder .infos .post .bars span .two {
+  right: -160px;
+}
+.qualification .container .holder .infos .post .bars span .three {
+  left: -160px;
+}
+.qualification .container .holder .infos .post .bars span .four {
+  right: -160px;
+}
+@media (max-width: 767px) {
+  .qualification .container .holder .infos .post .bars span .one {
+    left: -130px;
+  }
+  .qualification .container .holder .infos .post .bars span .two {
+    right: -130px;
+  }
+  .qualification .container .holder .infos .post .bars span .three {
+    left: -130px;
+  }
+  .qualification .container .holder .infos .post .bars span .four {
+    right: -130px;
+  }
+}
+.qualification .container .holder .infos .post .bars span:not(:last-child) {
+  margin-bottom: 70px;
+}
+.qualification .container .holder .infos .post .bars span:not(:last-child)::before {
+  content: "";
+  width: 2px;
+  height: 70px;
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--black-color);
 }/*# sourceMappingURL=main.css.map */
