@@ -1053,6 +1053,7 @@ main {
 	}
 }
 
+// --- Start Media Queries
 .services {
 	@include mediaSizeTwo(medium) {
 		.container {
@@ -1095,23 +1096,23 @@ main {
 	}
 }
 
-// -------------------------------------------------------------------------------
-// ---------- Start Qualification --------------------------------------------------
+/* ------------------------------ Start Qualification -----------------------*/
 
 .qualification {
 	padding-top: 60px;
-	padding-bottom: 180px;
+	padding-bottom: 120px;
 	color: var(--black-color);
 	.container {
 		.holder {
 			.togglers {
 				@include mediaSizeTwo(medium) {
-					gap: 20px;
+					gap: 10px;
 				}
 				display: flex;
 				justify-content: center;
-				gap: 60px;
+				gap: 20px;
 				.educat-exper {
+					padding: 10px 14px;
 					position: relative;
 					display: flex;
 					align-items: center;
@@ -1121,12 +1122,24 @@ main {
 					i {
 						font-size: 14px;
 						user-select: none;
+						color: var(--para-color);
 					}
 
 					h3 {
 						text-transform: capitalize;
 						font-weight: 400;
 						user-select: none;
+						color: var(--para-color);
+					}
+
+					&.active {
+						i {
+							color: var(--black-color);
+						}
+
+						h3 {
+							color: var(--black-color);
+						}
 					}
 
 					&::before {
@@ -1135,13 +1148,13 @@ main {
 						height: 1px;
 						background-color: var(--black-color);
 						position: absolute;
-						bottom: -5px;
+						bottom: 6px;
 						left: 50%;
 						transform: translateX(-50%);
 						transition: var(--first-transition);
 					}
 
-					&:hover::before {
+					&.active::before {
 						width: 65%;
 					}
 				}
@@ -1244,6 +1257,127 @@ main {
 								transform: translateX(-50%);
 								background-color: var(--black-color);
 							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ------------------------------ Start Portfolio -----------------------*/
+
+.portfolio {
+	padding-top: 60px;
+	padding-bottom: 60px;
+
+	.container {
+		.holder {
+			.btns {
+				@include mediaSizeTwo(medium) {
+					gap: 10px;
+				}
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 14px;
+				margin-bottom: 40px;
+
+				.clickOne {
+					@include mediaSizeTwo(small) {
+						width: 50px;
+						padding-top: 6px;
+						padding-bottom: 6px;
+						font-size: 13px;
+					}
+					@include mediaSizeTwo(medium) {
+						width: 60px !important;
+						padding-top: 8px;
+						padding-bottom: 8px;
+						font-size: 15px;
+					}
+					width: 80px;
+					text-transform: capitalize;
+					background-color: transparent;
+					border: none;
+					cursor: pointer;
+					padding-top: 10px;
+					padding-bottom: 10px;
+					border-radius: 6px;
+					border: 1px solid transparent;
+					color: var(--para-color);
+					transition: var(--first-transition);
+				}
+				.clickOne:focus {
+					outline: none;
+				}
+				.clickOne.active {
+					background-color: var(--black-color);
+					color: var(--white-color);
+				}
+
+				.clickOne:not(.active):hover {
+					border-color: var(--border-color);
+					color: var(--hover-color);
+				}
+			}
+
+			.boxes {
+				@include mediaSizeTwo(medium) {
+					width: 90%;
+					grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+				}
+				width: 70%;
+				margin: 0 auto;
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+				gap: 40px;
+				.card {
+					padding: 18px;
+					box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+					border-radius: 16px;
+					cursor: pointer;
+					transition: var(--first-transition);
+
+					&:hover {
+						transform: scale(1.05);
+					}
+
+					.image {
+						width: 100%;
+						margin-bottom: 20px;
+						img {
+							width: 100%;
+							object-fit: cover;
+							border-radius: 10px;
+							pointer-events: none;
+						}
+					}
+
+					h3 {
+						text-transform: capitalize;
+						font-weight: 500;
+						font-size: 16px;
+						margin-bottom: 10px;
+						pointer-events: none;
+					}
+
+					.demo {
+						display: flex;
+						gap: 6px;
+						align-items: center;
+						pointer-events: none;
+						p {
+							font-size: 12px;
+							text-transform: capitalize;
+							color: var(--para-color);
+							pointer-events: none;
+						}
+
+						i {
+							font-size: 10px;
+							color: var(--para-color);
+							pointer-events: none;
 						}
 					}
 				}

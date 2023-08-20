@@ -1022,22 +1022,24 @@ main .container .pic-anime .box img {
   }
 }
 
+/* ------------------------------ Start Qualification -----------------------*/
 .qualification {
   padding-top: 60px;
-  padding-bottom: 180px;
+  padding-bottom: 120px;
   color: var(--black-color);
 }
 .qualification .container .holder .togglers {
   display: flex;
   justify-content: center;
-  gap: 60px;
+  gap: 20px;
 }
 @media (max-width: 991px) {
   .qualification .container .holder .togglers {
-    gap: 20px;
+    gap: 10px;
   }
 }
 .qualification .container .holder .togglers .educat-exper {
+  padding: 10px 14px;
   position: relative;
   display: flex;
   align-items: center;
@@ -1050,6 +1052,7 @@ main .container .pic-anime .box img {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  color: var(--para-color);
 }
 .qualification .container .holder .togglers .educat-exper h3 {
   text-transform: capitalize;
@@ -1057,6 +1060,13 @@ main .container .pic-anime .box img {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  color: var(--para-color);
+}
+.qualification .container .holder .togglers .educat-exper.active i {
+  color: var(--black-color);
+}
+.qualification .container .holder .togglers .educat-exper.active h3 {
+  color: var(--black-color);
 }
 .qualification .container .holder .togglers .educat-exper::before {
   content: "";
@@ -1064,12 +1074,12 @@ main .container .pic-anime .box img {
   height: 1px;
   background-color: var(--black-color);
   position: absolute;
-  bottom: -5px;
+  bottom: 6px;
   left: 50%;
   transform: translateX(-50%);
   transition: var(--first-transition);
 }
-.qualification .container .holder .togglers .educat-exper:hover::before {
+.qualification .container .holder .togglers .educat-exper.active::before {
   width: 65%;
 }
 .qualification .container .holder .infos {
@@ -1163,4 +1173,120 @@ main .container .pic-anime .box img {
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--black-color);
+}
+
+/* ------------------------------ Start Portfolio -----------------------*/
+.portfolio {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.portfolio .container .holder .btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+@media (max-width: 991px) {
+  .portfolio .container .holder .btns {
+    gap: 10px;
+  }
+}
+.portfolio .container .holder .btns .clickOne {
+  width: 80px;
+  text-transform: capitalize;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  color: var(--para-color);
+  transition: var(--first-transition);
+}
+@media (max-width: 767px) {
+  .portfolio .container .holder .btns .clickOne {
+    width: 50px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 991px) {
+  .portfolio .container .holder .btns .clickOne {
+    width: 60px !important;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 15px;
+  }
+}
+.portfolio .container .holder .btns .clickOne:focus {
+  outline: none;
+}
+.portfolio .container .holder .btns .clickOne.active {
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+.portfolio .container .holder .btns .clickOne:not(.active):hover {
+  border-color: var(--border-color);
+  color: var(--hover-color);
+}
+.portfolio .container .holder .boxes {
+  width: 70%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+}
+@media (max-width: 991px) {
+  .portfolio .container .holder .boxes {
+    width: 90%;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}
+.portfolio .container .holder .boxes .card {
+  padding: 18px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: var(--first-transition);
+}
+.portfolio .container .holder .boxes .card:hover {
+  transform: scale(1.05);
+}
+.portfolio .container .holder .boxes .card .image {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.portfolio .container .holder .boxes .card .image img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+  pointer-events: none;
+}
+.portfolio .container .holder .boxes .card h3 {
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 10px;
+  pointer-events: none;
+}
+.portfolio .container .holder .boxes .card .demo {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  pointer-events: none;
+}
+.portfolio .container .holder .boxes .card .demo p {
+  font-size: 12px;
+  text-transform: capitalize;
+  color: var(--para-color);
+  pointer-events: none;
+}
+.portfolio .container .holder .boxes .card .demo i {
+  font-size: 10px;
+  color: var(--para-color);
+  pointer-events: none;
 }/*# sourceMappingURL=main.css.map */

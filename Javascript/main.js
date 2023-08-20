@@ -4,6 +4,10 @@ const headerOne = document.querySelector("header");
 const navBar = document.querySelector(".nav-bar");
 const servCards = document.querySelectorAll(".services .cards .box");
 const servHolder = document.querySelectorAll(".services .cards .holder");
+const qualTogglers = document.querySelectorAll(
+	".qualification .togglers .educat-exper"
+);
+const folioBtns = document.querySelectorAll('.portfolio .holder .clickOne');
 
 function closeNav() {
 	navBar.classList.toggle("active");
@@ -27,6 +31,7 @@ function upClick() {
 	window.scrollTo(0, 0);
 }
 
+// This Is For Cursor Animation
 window.addEventListener("mousemove", (e) => {
 	let x = e.clientX;
 	let y = e.clientY;
@@ -40,6 +45,7 @@ window.addEventListener("mousemove", (e) => {
 	}
 });
 
+// This Is For Services
 function closePopUp(e) {
 	e.parentElement.parentElement.classList.remove("active");
 }
@@ -54,13 +60,35 @@ servCards.forEach((e) => {
 	});
 });
 
+// This Is For Qualification
 function educExper(e) {
 	let postEduction = document.querySelectorAll(".qualification .infos .post");
 	for (post of postEduction) {
 		if (e.dataset.catching === post.dataset.catching) {
-      post.classList.add('active')
-    } else {
-      post.classList.remove('active')
-    }
+			post.classList.add("active");
+		} else {
+			post.classList.remove("active");
+		}
+	}
+
+	for (one of qualTogglers) {
+		if (one.dataset.catching === e.dataset.catching) {
+			one.classList.add("active");
+		} else {
+			one.classList.remove("active");
+		}
 	}
 }
+
+
+folioBtns.forEach((ele) => {
+	ele.addEventListener('click', () => {
+		folioBtns.forEach((e) => {
+			if (e.dataset.click === ele.dataset.click) {
+				e.classList.add("active");
+			} else {
+				e.classList.remove("active");
+			}
+		})
+	})
+})
