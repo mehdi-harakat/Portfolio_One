@@ -1,4 +1,5 @@
 const cursorMove = document.querySelector(".cursor-anime");
+const dark = document.querySelector(".dark-mode");
 const upBtn = document.querySelector(".up-btn");
 const headerOne = document.querySelector("header");
 const navBar = document.querySelector(".nav-bar");
@@ -10,13 +11,16 @@ const qualTogglers = document.querySelectorAll(
 const folioBtns = document.querySelectorAll(".portfolio .holder .clickOne");
 const cardsFilter = document.querySelectorAll(".portfolio .boxes a");
 
+
+
+
 function closeNav() {
 	navBar.classList.toggle("active");
 }
 
 window.addEventListener("scroll", () => {
 	if (scrollY >= 90) {
-		headerOne.style.boxShadow = "rgba(149, 157, 165, 0.2) 0px 8px 24px";
+		headerOne.style.boxShadow = "rgba(0, 0, 0, 0.35) 0px 5px 15px";
 	} else {
 		headerOne.style.boxShadow = "none";
 	}
@@ -132,3 +136,23 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 // End Swiper Sliding Js
+
+
+
+
+
+dark.addEventListener('click', (e) => {
+	if (e.target.ariaExpanded === "true") {
+		e.target.ariaExpanded = false;
+		document.body.classList.add('body-active');
+	} else {
+		e.target.ariaExpanded = true;
+		document.body.classList.remove('body-active');
+	}
+})
+
+function darkMode() {
+	let root = document.querySelector(':root');
+	let rootStyle = getComputedStyle(root);
+	let blackColor = rootStyle.getPropertyValue('--black-color')
+}

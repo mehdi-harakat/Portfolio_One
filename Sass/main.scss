@@ -110,6 +110,7 @@ header {
 
 		.nav-bar {
 			display: flex;
+			align-items: center;
 			gap: 10px;
 			li {
 				padding: 6px 12px;
@@ -121,6 +122,7 @@ header {
 					font-size: 12px;
 					font-weight: 400;
 					text-transform: capitalize;
+					color: var(--black-color);
 					transition: var(--first-transition);
 					&:hover,
 					&:hover i {
@@ -129,11 +131,82 @@ header {
 				}
 			}
 
+			.dark-mode {
+				width: 40px;
+				height: 16px;
+				border: 1px solid var(--black-color);
+				border-radius: 20px;
+				position: relative;
+				cursor: pointer;
+				transition: var(--first-transition);
+				margin-left: 26px;
+
+				@include mediaSizeTwo(medium) {
+					margin: 0;
+
+					&::after {
+						display: none;
+					}
+				}
+
+				.moon {
+					width: 8px;
+					height: 8px;
+					background-color: var(--black-color);
+					border-radius: 50%;
+					position: absolute;
+					top: 50%;
+					right: 4px;
+					transform: translateY(-50%);
+					pointer-events: none;
+					transition: left 0.3s, right 0.3s;
+				}
+
+				&::before{
+					content: '';
+					width: 8px;
+					height: 8px;
+					background-color: #1d1d1d;
+					border-radius: 50%;
+					position: absolute;
+					top: 50%;
+					left: 20px;
+					transform: translateY(-50%);
+					opacity: 0;
+					z-index: 1;
+					transition: all 0.4s ease;
+				}
+				
+				&::after {
+					content: '';
+					width: 3px;
+					height: 140%;
+					background-color: var(--border-color);
+					position: absolute;
+					top: 50%;
+					left: -25px;
+					transform: translateY(-50%);
+				}
+
+				&[aria-expanded="false"] {
+					.moon {
+						right: calc(40px - 15px);
+					}
+				}
+
+				&[aria-expanded="false"]::before {
+					left: 8px;
+					opacity: 1;
+					transition-delay: 250ms;
+				}
+			}
+
 			.close-nav {
 				display: none;
 				cursor: pointer;
 				border-radius: 50%;
 				border: 1px solid var(--black-color);
+				color: var(--black-color);
 				position: absolute;
 				bottom: 20px;
 				right: 35px;
@@ -311,7 +384,6 @@ main {
 				align-items: center;
 				gap: 6px;
 				background-color: var(--black-color);
-				// border: 1px solid var(--black-color);
 				border-radius: 14px;
 				color: var(--white-color);
 				margin-bottom: 120px;
@@ -358,9 +430,11 @@ main {
 					font-size: 15px;
 					text-transform: capitalize;
 					letter-spacing: 0.2px;
+					color: var(--black-color);
 				}
 
 				i {
+					color: var(--black-color);
 					font-size: 14px;
 					animation: arrowDown 0.6s ease-in-out alternate infinite both;
 				}
@@ -647,7 +721,7 @@ main {
 						text-align: center;
 						color: var(--black-color);
 						cursor: pointer;
-						box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+						box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 						i {
 							font-size: 18px;
 							margin-bottom: 14px;
@@ -921,6 +995,7 @@ main {
 				padding-bottom: 24px;
 				border-radius: 14px;
 				transition: var(--first-transition);
+				background-color: var(--white-color);
 
 				i {
 					font-size: 32px;
@@ -1352,6 +1427,7 @@ main {
 					border-radius: 16px;
 					cursor: pointer;
 					transition: var(--first-transition);
+					background-color: var(--white-color);
 
 					&:hover {
 						transform: scale(1.05);
@@ -1374,6 +1450,7 @@ main {
 						font-size: 16px;
 						margin-bottom: 10px;
 						pointer-events: none;
+						color: var(--black-color);
 					}
 
 					.demo {
@@ -1443,6 +1520,7 @@ main {
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 	padding: 20px;
 	border-radius: 18px;
+	background-color: var(--white-color);
 	.image {
 		width: 60px;
 		height: 60px;
@@ -1509,10 +1587,11 @@ main {
 				.item {
 					padding: 20px;
 					border-radius: 14px;
-					box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+					box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 					margin-bottom: 18px;
 					text-align: center;
 					cursor: pointer;
+					background-color: var(--white-color);
 					> i {
 						font-size: 22px;
 						margin-bottom: 16px;
@@ -1682,7 +1761,7 @@ main {
 
 footer {
 	padding-block: 60px;
-
+	color: var(--black-color);
 	.container {
 		.logo {
 			text-align: center;
@@ -1729,7 +1808,7 @@ footer {
 				font-size: 14px;
 				border-radius: 10px;
 				color: var(--white-color);
-				background-color: var(--para-color);
+				background-color: var(--black-color);
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -1737,7 +1816,7 @@ footer {
 				transition: var(--first-transition);
 
 				&:hover {
-					background-color: var(--black-color);
+					background-color: var(--hover-color);
 				}
 			}
 		}
@@ -1765,3 +1844,4 @@ footer {
 		}
 	}
 }
+

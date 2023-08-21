@@ -11,6 +11,10 @@ html {
   scroll-padding-top: 50px;
 }
 
+body {
+  transition: all 1s ease-in-out !important;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -28,7 +32,17 @@ ul {
   --bg-color: #fafafa;
   --hover-color: #010000;
   --para-color: #797c7f;
-  --border-color: #e9e9e9;
+  --border-color: #d8d8d8;
+  --first-transition: all 0.3s ease-in-out;
+}
+
+.body-active {
+  --black-color: rgb(255, 255, 255);
+  --white-color: #1f1f1f;
+  --bg-color: #1d1d1d;
+  --hover-color: rgb(196, 196, 196);
+  --para-color: #989898;
+  --border-color: #d8d8d8;
   --first-transition: all 0.3s ease-in-out;
 }
 
@@ -207,6 +221,7 @@ header .container .logo h2 span {
 }
 header .container .nav-bar {
   display: flex;
+  align-items: center;
   gap: 10px;
 }
 header .container .nav-bar li {
@@ -220,16 +235,80 @@ header .container .nav-bar li a {
   font-size: 12px;
   font-weight: 400;
   text-transform: capitalize;
+  color: var(--black-color);
   transition: var(--first-transition);
 }
 header .container .nav-bar li a:hover, header .container .nav-bar li a:hover i {
   color: var(--para-color);
+}
+header .container .nav-bar .dark-mode {
+  width: 40px;
+  height: 16px;
+  border: 1px solid var(--black-color);
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: var(--first-transition);
+  margin-left: 26px;
+}
+@media (max-width: 991px) {
+  header .container .nav-bar .dark-mode {
+    margin: 0;
+  }
+  header .container .nav-bar .dark-mode::after {
+    display: none;
+  }
+}
+header .container .nav-bar .dark-mode .moon {
+  width: 8px;
+  height: 8px;
+  background-color: var(--black-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: left 0.3s, right 0.3s;
+}
+header .container .nav-bar .dark-mode::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: #1d1d1d;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  opacity: 0;
+  z-index: 1;
+  transition: all 0.4s ease;
+}
+header .container .nav-bar .dark-mode::after {
+  content: "";
+  width: 3px;
+  height: 140%;
+  background-color: var(--border-color);
+  position: absolute;
+  top: 50%;
+  left: -25px;
+  transform: translateY(-50%);
+}
+header .container .nav-bar .dark-mode[aria-expanded=false] .moon {
+  right: 25px;
+}
+header .container .nav-bar .dark-mode[aria-expanded=false]::before {
+  left: 8px;
+  opacity: 1;
+  transition-delay: 250ms;
 }
 header .container .nav-bar .close-nav {
   display: none;
   cursor: pointer;
   border-radius: 50%;
   border: 1px solid var(--black-color);
+  color: var(--black-color);
   position: absolute;
   bottom: 20px;
   right: 35px;
@@ -435,8 +514,10 @@ main .container .profile-card .scroll-down p {
   font-size: 15px;
   text-transform: capitalize;
   letter-spacing: 0.2px;
+  color: var(--black-color);
 }
 main .container .profile-card .scroll-down i {
+  color: var(--black-color);
   font-size: 14px;
   animation: arrowDown 0.6s ease-in-out alternate infinite both;
 }
@@ -666,7 +747,7 @@ main .container .pic-anime .box img {
   text-align: center;
   color: var(--black-color);
   cursor: pointer;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .about .container .section .my-info .cards .ad-card i {
   font-size: 18px;
@@ -884,6 +965,7 @@ main .container .pic-anime .box img {
   padding-bottom: 24px;
   border-radius: 14px;
   transition: var(--first-transition);
+  background-color: var(--white-color);
 }
 .services .container .cards .box i {
   font-size: 32px;
@@ -1264,6 +1346,7 @@ main .container .pic-anime .box img {
   border-radius: 16px;
   cursor: pointer;
   transition: var(--first-transition);
+  background-color: var(--white-color);
 }
 .portfolio .container .holder .boxes .card:hover {
   transform: scale(1.05);
@@ -1285,6 +1368,7 @@ main .container .pic-anime .box img {
   font-size: 16px;
   margin-bottom: 10px;
   pointer-events: none;
+  color: var(--black-color);
 }
 .portfolio .container .holder .boxes .card .demo {
   display: flex;
@@ -1344,6 +1428,7 @@ main .container .pic-anime .box img {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding: 20px;
   border-radius: 18px;
+  background-color: var(--white-color);
 }
 .swiper-slide .image {
   width: 60px;
@@ -1405,10 +1490,11 @@ main .container .pic-anime .box img {
 .contact .container .holder .social-media .item {
   padding: 20px;
   border-radius: 14px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin-bottom: 18px;
   text-align: center;
   cursor: pointer;
+  background-color: var(--white-color);
 }
 .contact .container .holder .social-media .item > i {
   font-size: 22px;
@@ -1547,6 +1633,7 @@ main .container .pic-anime .box img {
 /* Start Footer ------------------------------------------*/
 footer {
   padding-block: 60px;
+  color: var(--black-color);
 }
 footer .container .logo {
   text-align: center;
@@ -1591,7 +1678,7 @@ footer .container .social-media i {
   font-size: 14px;
   border-radius: 10px;
   color: var(--white-color);
-  background-color: var(--para-color);
+  background-color: var(--black-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1599,7 +1686,7 @@ footer .container .social-media i {
   transition: var(--first-transition);
 }
 footer .container .social-media i:hover {
-  background-color: var(--black-color);
+  background-color: var(--hover-color);
 }
 footer .container p {
   font-size: 14px;

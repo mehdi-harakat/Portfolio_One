@@ -1,9 +1,7 @@
-// this is for media  Queries 
+// this is for media  Queries
 @use "../Helpers/helpOne" as *;
 // this is for pass this file to the main.scss
-@forward '../Helpers/helpOne' ;
-
-
+@forward "../Helpers/helpOne";
 
 /*------------- Start Variables ---------------------------*/
 :root {
@@ -12,11 +10,20 @@
 	--bg-color: #fafafa;
 	--hover-color: #010000;
 	--para-color: #797c7f;
-	--border-color: #e9e9e9;
+	--border-color: #d8d8d8;
+	// --border-color: #e9e9e9;
 	--first-transition: all 0.3s ease-in-out;
 }
 
-
+.body-active {
+	--black-color: rgb(255, 255, 255);
+	--white-color: #1f1f1f;
+	--bg-color: #1d1d1d;
+	--hover-color: rgb(196, 196, 196);
+	--para-color: #989898;
+	--border-color: #d8d8d8;
+	--first-transition: all 0.3s ease-in-out;
+}
 
 // Start Container;
 
@@ -39,9 +46,7 @@
 	}
 }
 
-
-
-// Start Title 
+// Start Title
 .title-compenent {
 	position: relative;
 	width: fit-content;
@@ -58,7 +63,7 @@
 		text-align: center;
 		text-transform: capitalize;
 	}
-	
+
 	p {
 		font-size: 15px;
 		color: var(--para-color);
