@@ -7,8 +7,8 @@ const servHolder = document.querySelectorAll(".services .cards .holder");
 const qualTogglers = document.querySelectorAll(
 	".qualification .togglers .educat-exper"
 );
-const folioBtns = document.querySelectorAll('.portfolio .holder .clickOne');
-const cardsFilter = document.querySelectorAll('.portfolio .boxes a');
+const folioBtns = document.querySelectorAll(".portfolio .holder .clickOne");
+const cardsFilter = document.querySelectorAll(".portfolio .boxes a");
 
 function closeNav() {
 	navBar.classList.toggle("active");
@@ -81,29 +81,54 @@ function educExper(e) {
 	}
 }
 
-
 // This Is For Portfolio
 folioBtns.forEach((ele) => {
-	ele.addEventListener('click', () => {
+	ele.addEventListener("click", () => {
 		folioBtns.forEach((e) => {
 			if (e.dataset.click === ele.dataset.click) {
 				e.classList.add("active");
 			} else {
 				e.classList.remove("active");
 			}
-		})
+		});
 
 		cardsFilter.forEach((element) => {
 			if (ele.dataset.click === "all") {
-				element.classList.remove('hide');
+				element.classList.remove("hide");
 			} else {
 				if (element.dataset.type === ele.dataset.click) {
-					element.classList.remove('hide');
+					element.classList.remove("hide");
 				} else {
-					element.classList.add('hide');
+					element.classList.add("hide");
 				}
 			}
+		});
+	});
+});
 
-		})
-	})
-})
+// Start Swiper Sliding Js
+
+var swiper = new Swiper(".mySwiper", {
+	slidesPerView: 1,
+	spaceBetween: 50,
+	pagination: {
+		el: ".swiper-pagination",
+		clickable: true,
+	},
+	breakpoints: {
+		640: {
+			slidesPerView: 2,
+			spaceBetween: 50,
+		},
+		768: {
+			slidesPerView: 2,
+			spaceBetween: 50,
+		},
+		1024: {
+			slidesPerView: 3,
+			spaceBetween: 50,
+		},
+	},
+});
+
+// End Swiper Sliding Js
