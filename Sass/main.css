@@ -8,6 +8,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 50px;
 }
 
 a {
@@ -1245,6 +1246,9 @@ main .container .pic-anime .box img {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   }
 }
+.portfolio .container .holder .boxes a.hide {
+  display: none;
+}
 .portfolio .container .holder .boxes .card {
   padding: 18px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -1289,4 +1293,10 @@ main .container .pic-anime .box img {
   font-size: 10px;
   color: var(--para-color);
   pointer-events: none;
+}
+
+/* Start Testmonial ----------------------------------------------------*/
+.testmonial {
+  padding-top: 60px;
+  padding-bottom: 60px;
 }/*# sourceMappingURL=main.css.map */

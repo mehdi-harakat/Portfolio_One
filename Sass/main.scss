@@ -1327,6 +1327,9 @@ main {
 					width: 90%;
 					grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 				}
+				a.hide {
+					display: none;
+				}
 				width: 70%;
 				margin: 0 auto;
 				display: grid;
@@ -1383,5 +1386,16 @@ main {
 				}
 			}
 		}
+	}
+}
+
+
+/* Start Testmonial ----------------------------------------------------*/
+
+.testmonial {
+	padding-top: 60px;
+	padding-bottom: 60px;
+	.container {
+		
 	}
 }

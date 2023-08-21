@@ -8,6 +8,7 @@ const qualTogglers = document.querySelectorAll(
 	".qualification .togglers .educat-exper"
 );
 const folioBtns = document.querySelectorAll('.portfolio .holder .clickOne');
+const cardsFilter = document.querySelectorAll('.portfolio .boxes a');
 
 function closeNav() {
 	navBar.classList.toggle("active");
@@ -81,6 +82,7 @@ function educExper(e) {
 }
 
 
+// This Is For Portfolio
 folioBtns.forEach((ele) => {
 	ele.addEventListener('click', () => {
 		folioBtns.forEach((e) => {
@@ -89,6 +91,19 @@ folioBtns.forEach((ele) => {
 			} else {
 				e.classList.remove("active");
 			}
+		})
+
+		cardsFilter.forEach((element) => {
+			if (ele.dataset.click === "all") {
+				element.classList.remove('hide');
+			} else {
+				if (element.dataset.type === ele.dataset.click) {
+					element.classList.remove('hide');
+				} else {
+					element.classList.add('hide');
+				}
+			}
+
 		})
 	})
 })
