@@ -1503,31 +1503,37 @@ main .container .pic-anime .box img {
   font-size: 22px;
   margin-bottom: 16px;
   display: block;
+  pointer-events: none;
 }
 .contact .container .holder .social-media .item h4 {
   font-size: 16px;
   font-weight: 500;
   margin-bottom: 8px;
+  pointer-events: none;
 }
 .contact .container .holder .social-media .item > p {
   font-size: 13px;
   font-weight: 400;
   margin-bottom: 24px;
+  pointer-events: none;
 }
 .contact .container .holder .social-media .item .text {
   display: flex;
   gap: 8px;
   justify-content: center;
+  pointer-events: none;
 }
 .contact .container .holder .social-media .item .text p {
   color: var(--para-color);
   font-size: 11px;
   text-transform: capitalize;
+  pointer-events: none;
 }
 .contact .container .holder .social-media .item .text i {
   font-size: 10px;
   color: var(--para-color);
   transition: var(--first-transition);
+  pointer-events: none;
 }
 .contact .container .holder .social-media .item:hover .text i {
   transform: translateX(4px);
@@ -1594,6 +1600,12 @@ main .container .pic-anime .box img {
   cursor: pointer;
   transition: var(--first-transition);
 }
+.contact .container .holder form .btn-sbmt p {
+  pointer-events: none;
+}
+.contact .container .holder form .btn-sbmt i {
+  pointer-events: none;
+}
 .contact .container .holder form .btn-sbmt:hover {
   background-color: var(--hover-color);
 }
@@ -1635,7 +1647,8 @@ main .container .pic-anime .box img {
 
 /* Start Footer ------------------------------------------*/
 footer {
-  padding-block: 60px;
+  padding-top: 60px;
+  padding-bottom: 20px;
   color: var(--black-color);
 }
 footer .container .logo {
@@ -1673,7 +1686,7 @@ footer .container .social-media {
   display: flex;
   justify-content: center;
   gap: 25px;
-  margin-bottom: 120px;
+  margin-bottom: 60px;
 }
 footer .container .social-media i {
   width: 30px;
