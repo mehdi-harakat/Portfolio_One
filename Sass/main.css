@@ -4,6 +4,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Rubik", sans-serif;
+  transition: all 0.3s ease;
 }
 
 html {
@@ -12,7 +13,7 @@ html {
 }
 
 body {
-  transition: all 1s ease-in-out !important;
+  transition: all 0.8s ease-in-out;
 }
 
 a {
@@ -479,6 +480,7 @@ main .container .profile-card .say-hello p {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  color: var(--white-color);
 }
 main .container .profile-card .say-hello:hover {
   background-color: var(--hover-color);
@@ -555,7 +557,7 @@ main .container .pic-anime .box span {
   height: 100%;
   animation: circle-move 10s ease-in-out 0s alternate infinite both;
   z-index: 10;
-  border: 12px solid rgba(255, 255, 255, 0.5);
+  border: 12px solid;
   opacity: 0.3;
 }
 main .container .pic-anime .box img {
@@ -746,7 +748,6 @@ main .container .pic-anime .box img {
   border-radius: 12px;
   text-align: center;
   color: var(--black-color);
-  cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .about .container .section .my-info .cards .ad-card i {
@@ -767,7 +768,7 @@ main .container .pic-anime .box img {
   font-weight: 400;
   font-size: 15px;
   letter-spacing: 0.5px;
-  line-height: 1.4;
+  line-height: 1.8;
   color: var(--para-color);
   margin-bottom: 40px;
   text-transform: capitalize;
@@ -1220,29 +1221,29 @@ main .container .pic-anime .box img {
   color: var(--para-color);
 }
 .qualification .container .holder .infos .post .bars span .one {
-  left: -160px;
+  right: -141px;
 }
 .qualification .container .holder .infos .post .bars span .two {
-  right: -160px;
-}
-.qualification .container .holder .infos .post .bars span .three {
   left: -160px;
 }
-.qualification .container .holder .infos .post .bars span .four {
+.qualification .container .holder .infos .post .bars span .three {
   right: -160px;
+}
+.qualification .container .holder .infos .post .bars span .four {
+  left: -160px;
 }
 @media (max-width: 767px) {
   .qualification .container .holder .infos .post .bars span .one {
-    left: -130px;
+    right: -118px;
   }
   .qualification .container .holder .infos .post .bars span .two {
-    right: -130px;
+    left: -138px;
   }
   .qualification .container .holder .infos .post .bars span .three {
-    left: -130px;
+    right: -140px;
   }
   .qualification .container .holder .infos .post .bars span .four {
-    right: -130px;
+    left: -138px;
   }
 }
 .qualification .container .holder .infos .post .bars span:not(:last-child) {
@@ -1488,6 +1489,7 @@ main .container .pic-anime .box img {
   margin-bottom: 30px;
 }
 .contact .container .holder .social-media .item {
+  display: block;
   padding: 20px;
   border-radius: 14px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -1495,6 +1497,7 @@ main .container .pic-anime .box img {
   text-align: center;
   cursor: pointer;
   background-color: var(--white-color);
+  color: var(--black-color);
 }
 .contact .container .holder .social-media .item > i {
   font-size: 22px;

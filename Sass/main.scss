@@ -162,8 +162,8 @@ header {
 					transition: left 0.3s, right 0.3s;
 				}
 
-				&::before{
-					content: '';
+				&::before {
+					content: "";
 					width: 8px;
 					height: 8px;
 					background-color: #1d1d1d;
@@ -176,9 +176,9 @@ header {
 					z-index: 1;
 					transition: all 0.4s ease;
 				}
-				
+
 				&::after {
-					content: '';
+					content: "";
 					width: 3px;
 					height: 140%;
 					background-color: var(--border-color);
@@ -393,6 +393,7 @@ main {
 				p {
 					text-transform: capitalize;
 					user-select: none;
+					color: var(--white-color);
 				}
 
 				&:hover {
@@ -477,7 +478,8 @@ main {
 					height: 100%;
 					animation: circle-move 10s ease-in-out 0s alternate infinite both;
 					z-index: 10;
-					border: 12px solid rgba(255, 255, 255, 0.5);
+					// border: 12px solid rgba(255, 255, 255, 0.5);
+					border: 12px solid;
 					opacity: 0.3;
 				}
 				// span.hello {
@@ -720,7 +722,6 @@ main {
 						border-radius: 12px;
 						text-align: center;
 						color: var(--black-color);
-						cursor: pointer;
 						box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 						i {
 							font-size: 18px;
@@ -745,7 +746,7 @@ main {
 					font-weight: 400;
 					font-size: 15px;
 					letter-spacing: 0.5px;
-					line-height: 1.4;
+					line-height: 1.8;
 					color: var(--para-color);
 					margin-bottom: 40px;
 					text-transform: capitalize;
@@ -1293,30 +1294,30 @@ main {
 							}
 
 							.one {
-								left: -160px;
+								right: -141px;
 							}
 							.two {
-								right: -160px;
-							}
-							.three {
 								left: -160px;
 							}
-							.four {
+							.three {
 								right: -160px;
+							}
+							.four {
+								left: -160px;
 							}
 
 							@include mediaSizeTwo(small) {
 								.one {
-									left: -130px;
+									right: -118px;
 								}
 								.two {
-									right: -130px;
+									left: -138px;
 								}
 								.three {
-									left: -130px;
+									right: -140px;
 								}
 								.four {
-									right: -130px;
+									left: -138px;
 								}
 							}
 						}
@@ -1585,6 +1586,7 @@ main {
 				}
 
 				.item {
+					display: block;
 					padding: 20px;
 					border-radius: 14px;
 					box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -1592,6 +1594,7 @@ main {
 					text-align: center;
 					cursor: pointer;
 					background-color: var(--white-color);
+					color: var(--black-color);
 					> i {
 						font-size: 22px;
 						margin-bottom: 16px;
@@ -1644,7 +1647,7 @@ main {
 					text-align: center;
 					margin-bottom: 30px;
 				}
-				
+
 				.name,
 				.mail,
 				.text-project {
@@ -1710,7 +1713,6 @@ main {
 	}
 }
 
-
 // Start Media Queries
 .contact {
 	.container {
@@ -1755,7 +1757,6 @@ main {
 		}
 	}
 }
-
 
 /* Start Footer ------------------------------------------*/
 
@@ -1844,4 +1845,3 @@ footer {
 		}
 	}
 }
-

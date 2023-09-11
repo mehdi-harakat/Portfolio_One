@@ -3,6 +3,7 @@ const dark = document.querySelector(".dark-mode");
 const upBtn = document.querySelector(".up-btn");
 const headerOne = document.querySelector("header");
 const navBar = document.querySelector(".nav-bar");
+const downloadBtn = document.getElementById("download-resume");
 const servCards = document.querySelectorAll(".services .cards .box");
 const servHolder = document.querySelectorAll(".services .cards .holder");
 const qualTogglers = document.querySelectorAll(
@@ -36,7 +37,7 @@ function upClick() {
 	window.scrollTo(0, 0);
 }
 
-// This Is For Cursor Animation
+// This Is For Cursor Animation --------------------------------------------------------------------
 window.addEventListener("mousemove", (e) => {
 	let x = e.clientX;
 	let y = e.clientY;
@@ -50,7 +51,16 @@ window.addEventListener("mousemove", (e) => {
 	}
 });
 
-// This Is For Services
+// This Is For Download My Resume 'CV' ----------------------------------------------------------
+
+const resumeUrl =
+	"https://drive.google.com/uc?export=download&id=1cspD0w8BeR6Wg-k6Tk5oXBspBBJxyaH4";
+
+downloadBtn.addEventListener('click', () => {
+	location.href = resumeUrl;
+})
+
+// This Is For Services --------------------------------------------------------------
 function closePopUp(e) {
 	e.parentElement.parentElement.classList.remove("active");
 }
@@ -65,7 +75,7 @@ servCards.forEach((e) => {
 	});
 });
 
-// This Is For Qualification
+// This Is For Qualification ---------------------------------------------------------------------
 function educExper(e) {
 	let postEduction = document.querySelectorAll(".qualification .infos .post");
 	for (post of postEduction) {
@@ -85,7 +95,7 @@ function educExper(e) {
 	}
 }
 
-// This Is For Portfolio
+// This Is For Portfolio ---------------------------------------------------------------------------
 folioBtns.forEach((ele) => {
 	ele.addEventListener("click", () => {
 		folioBtns.forEach((e) => {
@@ -110,7 +120,7 @@ folioBtns.forEach((ele) => {
 	});
 });
 
-// Start Swiper Sliding Js
+// Start Swiper Sliding Js -------------------------------------------------------------------------
 
 var swiper = new Swiper(".mySwiper", {
 	slidesPerView: 1,
@@ -135,7 +145,7 @@ var swiper = new Swiper(".mySwiper", {
 	},
 });
 
-// End Swiper Sliding Js
+// End Swiper Sliding Js --------------------------------------------------------------------------
 
 
 
@@ -155,4 +165,26 @@ function darkMode() {
 	let root = document.querySelector(':root');
 	let rootStyle = getComputedStyle(root);
 	let blackColor = rootStyle.getPropertyValue('--black-color')
+}
+
+// Contact Form Function
+
+function sendEmail(event) {
+	event.preventDefault(); // Prevent form submission
+
+	const name = document.getElementById("name").value;
+	const email = document.getElementById("mail").value;
+	const message = document.getElementById("project").value;
+
+	let subject = "New Form Submission";
+	let body = "Name: " + name + "\nEmail: " + email + "\nProject: " + message;
+
+	let mailtoLink =
+		"mailto:mehdiharakat20@gmail.com" +
+		"?subject=" +
+		encodeURIComponent(subject) +
+		"&body=" +
+		encodeURIComponent(body);
+
+	window.location.href = mailtoLink;
 }
