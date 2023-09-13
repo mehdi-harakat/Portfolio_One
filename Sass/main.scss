@@ -384,6 +384,7 @@ main {
 				align-items: center;
 				gap: 6px;
 				background-color: var(--black-color);
+				border: 1px solid transparent;
 				border-radius: 14px;
 				color: var(--white-color);
 				margin-bottom: 120px;
@@ -394,10 +395,15 @@ main {
 					text-transform: capitalize;
 					user-select: none;
 					color: var(--white-color);
+					transition: var(--first-transition);
 				}
 
 				&:hover {
-					background-color: var(--hover-color);
+					background-color: transparent;
+					border: 1px solid var(--black-color);
+				}
+				&:hover :where(p, i) {
+					color: var(--black-color);
 				}
 			}
 
@@ -478,23 +484,9 @@ main {
 					height: 100%;
 					animation: circle-move 10s ease-in-out 0s alternate infinite both;
 					z-index: 10;
-					// border: 12px solid rgba(255, 255, 255, 0.5);
 					border: 12px solid;
 					opacity: 0.3;
 				}
-				// span.hello {
-				// 	@extend %catching;
-				// 	width: 98%;
-				// 	height: 98%;
-				// 	animation: circle-move 10s ease-in-out 3s alternate infinite both;
-				// 	opacity: 0.2;
-				// }
-				// span.hello-two {
-				// 	width: 94%;
-				// 	height: 94%;
-				// 	animation: circle-move 10s ease-in-out 0.5s alternate infinite both;
-				// 	opacity: 0.1;
-				// }
 				img {
 					@extend %catching;
 					height: 100%;
@@ -576,7 +568,6 @@ main {
 				.box {
 					width: 220px;
 					height: 260px;
-					// transform: translateY(-20px);
 					span {
 						border: 4px solid rgba(255, 255, 255, 0.5);
 					}
@@ -673,7 +664,6 @@ main {
 				.box {
 					width: 180px;
 					height: 200px;
-					// transform: translateY(-20px);
 					span {
 						border: 4px solid rgba(255, 255, 255, 0.5);
 					}
@@ -753,27 +743,59 @@ main {
 				}
 			}
 
-			.cv-download {
-				cursor: pointer;
-				width: 200px;
-				height: 60px;
-				border-radius: 12px;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				gap: 10px;
-				background-color: var(--black-color);
-				transition: var(--first-transition);
-				i,
-				p {
-					color: var(--white-color);
-					text-transform: capitalize;
-				}
+			// .cv-download {
+			// 	cursor: pointer;
+			// 	width: 200px;
+			// 	height: 60px;
+			// 	border-radius: 12px;
+			// 	display: flex;
+			// 	justify-content: center;
+			// 	align-items: center;
+			// 	gap: 10px;
+			// 	background-color: var(--black-color);
+			// 	transition: var(--first-transition);
+			// 	i,
+			// 	p {
+			// 		color: var(--white-color);
+			// 		text-transform: capitalize;
+			// 	}
 
-				&:hover {
-					background-color: var(--hover-color);
-				}
+			// 	&:hover {
+			// 		background-color: var(--hover-color);
+			// 	}
+			// }
+
+		.cv-download {
+			width: 200px;
+			height: 55px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 6px;
+			background-color: var(--black-color);
+			border: 1px solid transparent;
+			border-radius: 14px;
+			color: var(--white-color);
+			margin-bottom: 120px;
+			cursor: pointer;
+			transition: var(--first-transition);
+
+			p {
+				text-transform: capitalize;
+				user-select: none;
+				color: var(--white-color);
+				transition: var(--first-transition);
 			}
+
+			&:hover {
+				background-color: transparent;
+				border: 1px solid var(--black-color);
+			}
+			&:hover :where(p, i) {
+				color: var(--black-color);
+			}
+		}
+
 		}
 	}
 }
@@ -1583,7 +1605,6 @@ main {
 					letter-spacing: 1px;
 					text-align: center;
 					margin-bottom: 30px;
-
 				}
 
 				.item {
@@ -1633,7 +1654,7 @@ main {
 							font-size: 10px;
 							color: var(--para-color);
 							transition: var(--first-transition);
-							pointer-events: none;	
+							pointer-events: none;
 						}
 					}
 
@@ -1694,33 +1715,37 @@ main {
 					padding-top: 32px;
 				}
 
-				.btn-sbmt {
-					border: none;
-					width: 200px;
-					height: 76px;
-					display: flex;
-					gap: 10px;
-					justify-content: center;
-					align-items: center;
-					background-color: var(--black-color);
-					color: var(--white-color);
-					border-radius: 16px;
-					text-transform: capitalize;
-					letter-spacing: 0.3px;
-					font-size: 18px;
-					cursor: pointer;
-					transition: var(--first-transition);
-					p {
-						pointer-events: none;
-					}
+		.btn-sbmt {
+			width: 200px;
+			height: 70px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 6px;
+			background-color: var(--black-color);
+			border: 1px solid transparent;
+			border-radius: 14px;
+			color: var(--white-color);
+			margin-bottom: 120px;
+			cursor: pointer;
+			transition: var(--first-transition);
 
-					i {
-						pointer-events: none;
-					}
-					&:hover {
-						background-color: var(--hover-color);
-					}
-				}
+			p {
+				text-transform: capitalize;
+				user-select: none;
+				color: var(--white-color);
+				transition: var(--first-transition);
+			}
+
+			&:hover {
+				background-color: transparent;
+				border: 1px solid var(--black-color);
+			}
+			&:hover :where(p, i) {
+				color: var(--black-color);
+			}
+		}
+
 			}
 		}
 	}

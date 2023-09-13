@@ -469,6 +469,7 @@ main .container .profile-card .say-hello {
   align-items: center;
   gap: 6px;
   background-color: var(--black-color);
+  border: 1px solid transparent;
   border-radius: 14px;
   color: var(--white-color);
   margin-bottom: 120px;
@@ -481,9 +482,14 @@ main .container .profile-card .say-hello p {
      -moz-user-select: none;
           user-select: none;
   color: var(--white-color);
+  transition: var(--first-transition);
 }
 main .container .profile-card .say-hello:hover {
-  background-color: var(--hover-color);
+  background-color: transparent;
+  border: 1px solid var(--black-color);
+}
+main .container .profile-card .say-hello:hover :where(p, i) {
+  color: var(--black-color);
 }
 main .container .profile-card .scroll-down {
   display: flex;
@@ -774,24 +780,34 @@ main .container .pic-anime .box img {
   text-transform: capitalize;
 }
 .about .container .section .cv-download {
-  cursor: pointer;
   width: 200px;
-  height: 60px;
-  border-radius: 12px;
+  height: 55px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
   background-color: var(--black-color);
+  border: 1px solid transparent;
+  border-radius: 14px;
+  color: var(--white-color);
+  margin-bottom: 120px;
+  cursor: pointer;
   transition: var(--first-transition);
 }
-.about .container .section .cv-download i,
 .about .container .section .cv-download p {
-  color: var(--white-color);
   text-transform: capitalize;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  color: var(--white-color);
+  transition: var(--first-transition);
 }
 .about .container .section .cv-download:hover {
-  background-color: var(--hover-color);
+  background-color: transparent;
+  border: 1px solid var(--black-color);
+}
+.about .container .section .cv-download:hover :where(p, i) {
+  color: var(--black-color);
 }
 
 @media (max-width: 991px) {
@@ -1584,30 +1600,34 @@ main .container .pic-anime .box img {
   padding-top: 32px;
 }
 .contact .container .holder form .btn-sbmt {
-  border: none;
   width: 200px;
-  height: 76px;
+  height: 70px;
   display: flex;
-  gap: 10px;
   justify-content: center;
   align-items: center;
+  gap: 6px;
   background-color: var(--black-color);
+  border: 1px solid transparent;
+  border-radius: 14px;
   color: var(--white-color);
-  border-radius: 16px;
-  text-transform: capitalize;
-  letter-spacing: 0.3px;
-  font-size: 18px;
+  margin-bottom: 120px;
   cursor: pointer;
   transition: var(--first-transition);
 }
 .contact .container .holder form .btn-sbmt p {
-  pointer-events: none;
-}
-.contact .container .holder form .btn-sbmt i {
-  pointer-events: none;
+  text-transform: capitalize;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  color: var(--white-color);
+  transition: var(--first-transition);
 }
 .contact .container .holder form .btn-sbmt:hover {
-  background-color: var(--hover-color);
+  background-color: transparent;
+  border: 1px solid var(--black-color);
+}
+.contact .container .holder form .btn-sbmt:hover :where(p, i) {
+  color: var(--black-color);
 }
 
 @media (max-width: 767px) {
